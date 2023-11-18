@@ -25,7 +25,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <span className="hidden md:block">
+      <span className="hidden md:contents">
         <ComputersCanvas />
       </span>
 
