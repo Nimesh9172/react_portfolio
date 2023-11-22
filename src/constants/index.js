@@ -328,7 +328,7 @@ const projects = [
     ],
     image:
       "https://res.cloudinary.com/db5eumcfj/image/upload/v1700314876/nbeu5qplvfkmrbioryhi.png",
-    source_code_link: "https://oxy-clone-three-murex.vercel.app/",
+    source_code_link: "https://nextjs-promptai.vercel.app/",
   },
 ];
 
