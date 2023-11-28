@@ -1,6 +1,6 @@
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { navLinks } from "../constants/index";
-import { logo, menu, close, intellect } from "../assets";
+import { logo, menu, close } from "../assets";
 import { useState } from "react";
 import { styles } from "../style";
 import { Link } from "react-router-dom";
