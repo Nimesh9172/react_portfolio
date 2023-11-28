@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
-import HeroText from "./Herotext";
+import HeroText from "./HeroText";
 
 const sentence1 = "Hi,".split("");
 const sentence2 = "I'm".split("");
