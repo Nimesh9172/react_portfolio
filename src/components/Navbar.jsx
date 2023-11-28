@@ -1,5 +1,6 @@
+import { animate, motion } from "framer-motion";
 import { navLinks } from "../constants/index";
-import { logo, menu, close } from "../assets";
+import { logo, menu, close, intellect } from "../assets";
 import { useState } from "react";
 import { styles } from "../style";
 import { Link } from "react-router-dom";
@@ -7,7 +8,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-
+  const rotationVariants = {
+    initial: { rotate: 0 },
+    animate: { rotate: 360 },
+  };
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
@@ -21,7 +25,25 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <motion.div
+            variants={rotationVariants}
+            initial="initial"
+            animate="animate"
+            transition={{
+              duration: 1,
+              delay: 1,
+              repeat: Infinity,
+              repeatType: "loop",
+              repeatDelay: 3,
+            }}
+            whileHover={{
+              rotate: -180,
+              transition: { delay: 0, duration: 1 },
+            }}
+            whileTap={{ scale: 0.8 }}
+          >
+            <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          </motion.div>
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Nimesh&nbsp; <span className="sm:block hidden"> | Developer</span>
           </p>
