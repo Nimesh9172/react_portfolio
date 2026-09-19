@@ -86,3 +86,17 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
+
+export const letterVariant = (delay) => ({
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 380,
+      damping: 16,
+      delay,
+    },
+  },
+});

@@ -6,12 +6,14 @@ const CanvasLoader = () => {
     <Html
       as="div"
       center
+      prepend
+      wrapperClass="canvas-loader-html"
       style={{
-        marginTop: 100,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        pointerEvents: "none",
       }}
     >
       <span className="canvas-loader"></span>
@@ -20,10 +22,10 @@ const CanvasLoader = () => {
           fontSize: 14,
           color: "#F1F1F1",
           fontWeight: 800,
-          marginTop: 40,
+          marginTop: 16,
         }}
       >
-        {progress.toFixed(2)}%
+        {progress.toFixed(0)}%
       </p>
     </Html>
   );

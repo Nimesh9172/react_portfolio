@@ -4,21 +4,21 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
   Works,
   StarsCanvas,
+  Awards,
+  Footer,
+  CustomCursor,
 } from "./components";
-
-import AggregationDataTable from "./components/AggregationDataTable";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        {/* <AggregationDataTable /> */}
+      <CustomCursor />
+      <div className="relative z-0 w-full overflow-x-hidden bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -27,9 +27,10 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        {/* <Feedbacks /> */}
-        <div className="relative z-0">
+        <Awards />
+        <div className="relative z-0 overflow-hidden">
           <Contact />
+          <Footer />
           <StarsCanvas />
         </div>
       </div>

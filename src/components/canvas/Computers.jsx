@@ -22,8 +22,8 @@ const Computers = (props) => {
       <directionalLight color="#915EFF" position={[0, 1, 5]} intensity={7} />
       <primitive
         object={computer.scene}
-        scale={props.isMobile ? 0.6 : 0.75}
-        position={[0, -4, -1.5]}
+        scale={props.isMobile ? 0.45 : 0.55}
+        position={props.isMobile ? [0, -3.1, -2.2] : [0, -3.4, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -34,37 +34,45 @@ const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 600px)");
-
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
 
-    // Remove the listener when the component is unmounted
+  useEffect(() => {
+    const triggerResize = () => window.dispatchEvent(new Event("resize"));
+    const frame = requestAnimationFrame(triggerResize);
+    const timeout = setTimeout(triggerResize, 200);
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
     };
   }, []);
+
   return (
     <Canvas
-      frameloop="demand"
+      className="h-full w-full"
+      style={{ width: "100%", height: "100%", display: "block" }}
+      frameloop="always"
       shadows
-      camera={{ position: [20, 3, 5], fov: 30 }}
-      gl={{ preserveDrawingBuffer: true }}
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true, alpha: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          maxZoom={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          enablePan={false}
+          enableRotate
+          rotateSpeed={0.7}
+          minPolarAngle={Math.PI / 2.4}
+          maxPolarAngle={Math.PI / 1.8}
         />
         <Computers isMobile={isMobile} />
       </Suspense>

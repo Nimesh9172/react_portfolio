@@ -4,33 +4,23 @@ import {
   creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
   mongodb,
   mysql,
   django,
   python,
-  threejs,
   nextjs,
   git,
-  figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   intellect,
-  carrent,
-  jobit,
-  tripguide,
+  vishleshan,
   skycrm,
-  skycrm2,
   spreadingknowledge,
+  edukaan,
+  technician,
 } from "../assets";
 
 export const navLinks = [
@@ -43,38 +33,74 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "tech",
+    title: "Skills",
+  },
+  {
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id: "awards",
+    title: "Awards",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
 ];
 
+export const socialLinks = {
+  name: "Nimesh Vishwakarma",
+  role: "Software Developer",
+  email: "nimeshvishwav@gmail.com",
+  phone: "+91 79728 61253",
+  phoneHref: "tel:+917972861253",
+  location: "Mumbai, Maharashtra, India",
+  github: "https://github.com/Nimesh9172",
+  linkedin: "https://www.linkedin.com/in/nimesh-vishwakarma-053912211",
+  resume: "/Nimesh_Vishwakarma_Resume.pdf",
+};
+
 const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "Frontend Developer",
-    icon: mobile,
-  },
   {
     title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "API Integration",
+    title: "Full-Stack Developer",
+    icon: web,
+  },
+  {
+    title: "Cloud & DevOps",
     icon: creator,
+  },
+  {
+    title: "Mobile Developer",
+    icon: mobile,
   },
 ];
 
 const technologies = [
   {
-    name: "Next js",
-    icon: nextjs,
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "Django",
+    icon: django,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
   },
   {
     name: "React JS",
     icon: reactjs,
+  },
+  {
+    name: "Next JS",
+    icon: nextjs,
   },
   {
     name: "HTML 5",
@@ -85,251 +111,169 @@ const technologies = [
     icon: css,
   },
   {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "Node JS",
-  //   icon: nodejs,
-  // },
   {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Mysql",
+    name: "MySQL",
     icon: mysql,
   },
   {
-    name: "Python",
-    icon: python,
+    name: "Docker",
+    icon: docker,
   },
   {
-    name: "Django",
-    icon: django,
-  },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
-  {
-    name: "git",
+    name: "Git",
     icon: git,
   },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
+];
+
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["Python", "JavaScript", "SQL"],
+  },
+  {
+    title: "Frameworks",
+    skills: ["Django", "Django REST Framework", "React.js", "React Native", "Next.js", "Flask"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS", "Azure", "Docker", "Jenkins", "CI/CD"],
+  },
+  {
+    title: "Databases",
+    skills: ["MongoDB", "MySQL", "PostgreSQL"],
+  },
 ];
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company_name: "Intellect info trade",
-    icon: intellect,
+    title: "Senior Software Engineer",
+    company_name: "Vishleshan AI Solutions",
+    year: "2026",
+    date: "Apr 2026 – Present",
+    summary:
+      "Leading backend delivery for enterprise platforms, mentoring peers, and driving Git branching, production deployments, and development best practices across AWS and Azure.",
+    icon: vishleshan,
     iconBg: "#383E56",
-    date: "April 2022 - Present",
     points: [
-      "Developing and maintaining web applications using python, django and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Introduced Git branching strategies, mentored peers, and drove production-ready development practices.",
+      "Played a key role in requirement analysis, production deployments, and maintaining robust, performant code.",
+      "Deployed and managed applications on AWS and Azure, keeping environments consistent with Docker.",
     ],
   },
-  // {
-  //   title: "React Native Developer",
-  //   company_name: "Tesla",
-  //   icon: tesla,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2021 - Feb 2022",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  {
+    title: "Software Engineer",
+    company_name: "Vishleshan AI Solutions",
+    year: "2023",
+    date: "Dec 2023 – Mar 2026",
+    summary:
+      "Built backends and database schemas from scratch for field-service and B2B eCommerce platforms using Python, Django, and Docker. Improved performance with Celery, RabbitMQ, materialized views, and database replication.",
+    icon: vishleshan,
+    iconBg: "#383E56",
+    points: [
+      "Designed and implemented the backend and database schema from scratch for the Technician App, enabling real-time field operations and job tracking.",
+      "Developed scalable backend services using Python, Django, and Docker, with a strong emphasis on REST APIs and third-party integrations.",
+      "Improved performance for a B2B eCommerce platform using materialized views, Celery + RabbitMQ, and database replication.",
+      "Built a modular notification system with real-time and scheduled alerts via email, SMS, and in-app messaging.",
+    ],
+  },
+  {
+    title: "Python Developer",
+    company_name: "Intellect Infotrade Pvt. Ltd.",
+    year: "2022",
+    date: "Apr 2022 – Nov 2023",
+    summary:
+      "Built Django and MySQL web applications, designed React and React Native interfaces, and integrated MQTT for real-time communication and calling features.",
+    icon: intellect,
+    iconBg: "#E6DEDD",
+    points: [
+      "Built and maintained web applications using Django and MySQL with a focus on backend scalability.",
+      "Designed frontend interfaces using React.js and React Native for cross-platform accessibility.",
+      "Developed RESTful APIs with Django REST Framework for seamless frontend–backend integration.",
+      "Integrated MQTT for real-time communication and calling features.",
+      "Collaborated with UI/UX designers and product teams to align deliverables with business goals.",
+    ],
+  },
 ];
 
-const testimonials = [
+const awards = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    title: "Ultimate Team Player Award",
+    company: "Vishleshan AI Solutions",
+    year: "2024",
+    description:
+      "Recognized for exceptional collaboration, ownership, and contribution to team success across key projects.",
   },
 ];
 
 const projects = [
   {
-    name: "Skycrm",
+    name: "Edukaan (Tata Motors)",
     description:
-      "Built on a web-based platform, our CRM for the BPO industry empowers users to initiate calls effortlessly, generate in-depth call reports, and allows supervisors to live-monitor ongoing calls.",
+      "Scalable B2B eCommerce platform that helps dealers manage orders, inventory, and product catalogs. Performance was improved with materialized views, Celery + RabbitMQ, and database replication.",
     tags: [
-      {
-        name: "django",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mysql",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "django", color: "blue-text-gradient" },
+      { name: "mysql", color: "green-text-gradient" },
+      { name: "celery", color: "orange-text-gradient" },
+      { name: "aws", color: "pink-text-gradient" },
+    ],
+    image: edukaan,
+    live_link: "",
+    source_code_link: "",
+  },
+  {
+    name: "Technician App (Havells)",
+    description:
+      "Technician-facing app that optimizes service job assignments, workflow tracking, and real-time field updates. Backend and database schema were designed from scratch for live operations.",
+    tags: [
+      { name: "django", color: "blue-text-gradient" },
+      { name: "docker", color: "green-text-gradient" },
+      { name: "rest-api", color: "pink-text-gradient" },
+      { name: "react-native", color: "orange-text-gradient" },
+    ],
+    image: technician,
+    live_link: "",
+    source_code_link: "",
+  },
+  {
+    name: "SkyCRM",
+    description:
+      "Centralized CRM integrating IVR, ACD, omnichannel support (email, chat, social), analytics, and workforce management — including live call monitoring and in-depth reporting.",
+    tags: [
+      { name: "django", color: "blue-text-gradient" },
+      { name: "mysql", color: "green-text-gradient" },
+      { name: "mqtt", color: "pink-text-gradient" },
     ],
     image: skycrm,
-    source_code_link: "https://creditfair.skycrm.app/",
+    live_link: "https://creditfair.skycrm.app/",
+    source_code_link: "",
   },
   {
-    name: "Spreadingknowledge",
+    name: "Spreading Knowledge",
     description:
-      "Web application that empower students with creative and entrepreneurial skills. Develop the complete personality. To reach and spread education at the grassroots level by using the online platform.",
+      "Full-stack e-learning platform similar to UpGrad, with course browsing, user progress tracking, secure authentication, and payment integration using Django, React.js, and REST APIs.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "green-text-gradient",
-      },
-      {
-        name: "php",
-        color: "pink-text-gradient",
-      },
+      { name: "django", color: "blue-text-gradient" },
+      { name: "react", color: "green-text-gradient" },
+      { name: "rest-api", color: "pink-text-gradient" },
     ],
     image: spreadingknowledge,
-    source_code_link: "http://spreadingknowledge.in/",
-  },
-  {
-    name: "Survey",
-    description:
-      "It is a web-based application that enables public surveys for political parties. The admin can dynamically generate forms, keeping track of the submission source to monitor and manage responses effectively.",
-    tags: [
-      {
-        name: "django",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mysql",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image:
-      "https://res.cloudinary.com/db5eumcfj/image/upload/v1700316837/xovn94heednbuoq2zg1e.png",
-    source_code_link: "https://survey.skycrm.app/",
-  },
-  {
-    name: "Airbnb Clone",
-    description:
-      "Oxybnb is an online marketplace that connects people who want to rent out their property. Airbnb offers hosts a relatively easy way to earn some income from their property.",
-    tags: [
-      {
-        name: "nextjs13",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image:
-      "https://res.cloudinary.com/db5eumcfj/image/upload/v1700314053/d0kwdny5nauae7akf7mz.png",
-    source_code_link: "https://oxy-clone-three-murex.vercel.app/",
-  },
-  {
-    name: "Promptai",
-    description:
-      "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts.",
-    tags: [
-      {
-        name: "nextjs13",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image:
-      "https://res.cloudinary.com/db5eumcfj/image/upload/v1700314876/nbeu5qplvfkmrbioryhi.png",
-    source_code_link: "https://nextjs-promptai.vercel.app/",
+    live_link: "http://spreadingknowledge.in/",
+    source_code_link: "",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  skillCategories,
+  experiences,
+  awards,
+  projects,
+};

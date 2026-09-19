@@ -1,15 +1,46 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { socialLinks } from "../constants";
 import "react-toastify/dist/ReactToastify.css";
-// template_kaud3hh
-// service_5jdwapg
-// y1ba3qhl5YBXS8mV7
+
+const contactItems = [
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: socialLinks.email,
+    href: `mailto:${socialLinks.email}`,
+  },
+  {
+    icon: FaPhone,
+    label: "Phone",
+    value: socialLinks.phone,
+    href: socialLinks.phoneHref,
+  },
+  {
+    icon: FaMapMarkerAlt,
+    label: "Location",
+    value: socialLinks.location,
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "Nimesh9172",
+    href: socialLinks.github,
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "nimesh-vishwakarma",
+    href: socialLinks.linkedin,
+  },
+];
 
 const Contact = () => {
   const formRef = useRef();
@@ -18,23 +49,15 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    // toast.success("Error Notification !", {
-    //   position: toast.POSITION.BOTTOM_LEFT,
-    // });
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
-  const notify = () =>
-    (toastId.current = toast.loading("Submitting your message.", {
-      autoClose: false,
-    }));
-
-  const update = () =>
-    toast.update(toastId.current, { type: toast.TYPE.INFO, autoClose: 5000 });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    notify();
+    toastId.current = toast.loading("Submitting your message.", {
+      autoClose: false,
+    });
     setLoading(true);
 
     emailjs
@@ -51,7 +74,6 @@ const Contact = () => {
         "y1ba3qhl5YBXS8mV7"
       )
       .then(() => {
-        setLoading(false);
         toast.success("Thank you. I will get back to you as soon as possible", {
           position: toast.POSITION.BOTTOM_CENTER,
           autoClose: 9000,
@@ -75,20 +97,51 @@ const Contact = () => {
   };
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="flex flex-col-reverse lg:flex-row lg:items-start gap-8 lg:gap-12">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="w-full lg:w-1/2 bg-black-100 p-6 sm:p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <h2 className={styles.sectionHeadText}>Contact.</h2>
+
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+          {contactItems.map(({ icon: Icon, label, value, href }) => (
+            <div key={label} className="flex items-start gap-3 min-w-0">
+              <span className="mt-0.5 w-8 h-8 shrink-0 rounded-full bg-tertiary flex items-center justify-center text-[#915EFF] text-sm">
+                <Icon />
+              </span>
+              {href ? (
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="min-w-0 hover:text-white"
+                >
+                  <span className="block text-[11px] uppercase tracking-wider text-secondary">
+                    {label}
+                  </span>
+                  <span className="block text-sm text-white-100 break-all">{value}</span>
+                </a>
+              ) : (
+                <div className="min-w-0">
+                  <span className="block text-[11px] uppercase tracking-wider text-secondary">
+                    {label}
+                  </span>
+                  <span className="block text-sm text-white-100">{value}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-8 flex flex-col gap-5"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your name</span>
+            <span className="text-white font-medium mb-2">Your name</span>
             <input
               required
               type="text"
@@ -96,11 +149,11 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
+            <span className="text-white font-medium mb-2">Your email</span>
             <input
               required
               type="email"
@@ -108,32 +161,35 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-2">Your Message</span>
             <textarea
-              rows="7"
+              rows="6"
               required
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What's do you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              placeholder="What do you want to say?"
+              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
             />
           </label>
-          <button
+          <motion.button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
-          </button>
+          </motion.button>
         </form>
       </motion.div>
+
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="w-full lg:w-1/2 h-[320px] sm:h-[420px] lg:h-[560px] lg:sticky lg:top-28 overflow-hidden"
       >
         <EarthCanvas />
       </motion.div>

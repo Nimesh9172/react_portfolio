@@ -8,28 +8,27 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt
+    tiltMaxAngleX={15}
+    tiltMaxAngleY={15}
+    scale={1.05}
+    transitionSpeed={450}
+    className="w-full"
+  >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+      whileHover={{ y: -8 }}
+      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow"
     >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
+      <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+        <motion.img
           src={icon}
-          alt="web-development"
+          alt={title}
           className="w-16 h-16 object-contain"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
         />
-
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
+        <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
       </div>
     </motion.div>
   </Tilt>
@@ -47,15 +46,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Versatile Full Stack Developer with 1.5 years of experience in creating
-        dynamic and user-centric web applications. Proficient in frontend
-        technologies such as React, Next.js, and skilled in backend development
-        using Python with Django. Well-versed in databases like MongoDB,
-        PostgreSQL, and MySQL. I'm a quick learner and collaborate closely with
-        clients to create efficient, scalable, and user-friendly solutions!
+        Versatile Full Stack Developer with 4+ years of experience building
+        dynamic, user-centric web applications. Proficient in React and Next.js,
+        with a strong backend focus in Python and Django, and databases including
+        MongoDB, PostgreSQL, and MySQL. I work independently and in teams, and I
+        am eager to keep growing with the organisation.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
