@@ -24,9 +24,9 @@ import {
   SiFirebase,
   SiVercel,
   SiNodedotjs,
-  SiRedis,
 } from "react-icons/si";
 import { FaAws, FaDatabase } from "react-icons/fa";
+import { DiRedis } from "react-icons/di";
 import { VscAzure } from "react-icons/vsc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../style";
@@ -52,7 +52,7 @@ const allTechs = [
   { name: "AWS", Icon: FaAws, color: "#FF9900" },
   { name: "Azure", Icon: VscAzure, color: "#0078D4" },
   { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-  { name: "Redis", Icon: SiRedis, color: "#DC382D" },
+  { name: "Redis", Icon: DiRedis, color: "#DC382D" },
   { name: "RabbitMQ", Icon: SiRabbitmq, color: "#FF6600" },
   { name: "Celery", Icon: SiCelery, color: "#37814A" },
   { name: "Jenkins", Icon: SiJenkins, color: "#D33833" },
