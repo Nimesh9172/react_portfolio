@@ -75,7 +75,7 @@ const Hero = () => {
             variants={fadeIn("up", "spring", 0.8, 0.8)}
             initial="hidden"
             animate="show"
-            className={`${styles.heroSubText} mt-5 text-white-100 max-w-2xl`}
+            className={`${styles.heroSubText} mt-5 text-white-100 max-w-2xl cursor-invert`}
           >
             4+ years building scalable web apps with Python, Django, React,
             AWS & Azure.

@@ -78,6 +78,16 @@ canvas {
   box-shadow: 0 0 18px rgba(145, 94, 255, 0.25);
 }
 
+.custom-cursor.is-invert {
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring.is-invert {
+  background: #ffffff;
+  border-color: transparent;
+  box-shadow: none;
+}
+
 .custom-cursor-orbit {
   position: absolute;
   inset: -6px;

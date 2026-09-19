@@ -30,7 +30,7 @@ const HeroText = ({ children, delay = 0 }) => {
       animate="show"
     >
       <motion.span
-        className="inline-block cursor-pointer select-none"
+        className="inline-block cursor-pointer select-none cursor-invert cursor-invert-lg"
         animate={controls}
         onMouseOver={() => {
           if (!isPlaying) {
