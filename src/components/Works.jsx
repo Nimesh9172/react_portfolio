@@ -27,7 +27,7 @@ const ImpactStat = ({ to, decimals = 0, suffix, label, active }) => {
   }, [active, to, decimals]);
 
   return (
-    <div className="project-impact absolute bottom-4 right-4 rounded-2xl px-3 py-2 text-right sm:px-4 sm:py-3">
+    <div className="project-impact pointer-events-none absolute bottom-4 right-4 rounded-2xl px-3 py-2 text-right sm:px-4 sm:py-3">
       <p className="text-[22px] font-black leading-none text-white sm:text-[30px]">
         {display}
         {suffix}
@@ -51,10 +51,6 @@ const ProjectCard = ({
   impact,
   active,
 }) => {
-  const openLink = (url) => {
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <article
       className={`project-panel group relative flex h-full w-[85vw] max-w-[820px] shrink-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#110d2a] sm:w-[70vw] lg:w-[58vw] ${
@@ -77,26 +73,28 @@ const ProjectCard = ({
           </span>
         ) : null}
         {impact ? <ImpactStat active={active} {...impact} /> : null}
-        <div className="absolute right-4 top-4 flex gap-2">
+        <div className="absolute right-4 top-4 z-20 flex gap-2">
           {source_code_link ? (
-            <button
-              type="button"
-              onClick={() => openLink(source_code_link)}
+            <a
+              href={source_code_link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="black-gradient flex h-10 w-10 items-center justify-center rounded-full"
               aria-label={`View ${name} source`}
             >
               <FaGithub className="text-white" />
-            </button>
+            </a>
           ) : null}
           {live_link ? (
-            <button
-              type="button"
-              onClick={() => openLink(live_link)}
+            <a
+              href={live_link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="black-gradient flex h-10 w-10 items-center justify-center rounded-full"
               aria-label={`View ${name} live`}
             >
               <FaExternalLinkAlt className="text-white text-sm" />
-            </button>
+            </a>
           ) : null}
           {!live_link && !source_code_link ? (
             <div
@@ -125,14 +123,15 @@ const ProjectCard = ({
             ))}
           </div>
           {live_link ? (
-            <button
-              type="button"
-              onClick={() => openLink(live_link)}
+            <a
+              href={live_link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#c4b5fd] transition-colors hover:text-white"
             >
               Open live
               <FaArrowRight className="text-[11px]" />
-            </button>
+            </a>
           ) : null}
         </div>
       </div>

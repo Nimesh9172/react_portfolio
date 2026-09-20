@@ -3,7 +3,6 @@ import { navLinks, socialLinks } from "../constants/index";
 import { logo, menu, close } from "../assets";
 import { useEffect, useRef, useState } from "react";
 import { styles } from "../style";
-import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Navbar = () => {
@@ -36,8 +35,8 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
+        <a
+          href="#home"
           className="flex items-center gap-2"
           onClick={() => {
             setActive("");
@@ -58,7 +57,7 @@ const Navbar = () => {
             Nimesh&nbsp;
             <span className="md:block hidden"> | Software Engineer</span>
           </p>
-        </Link>
+        </a>
         <ul className="list-none hidden md:flex flex-row gap-6 lg:gap-8 items-center">
           {navLinks.map((link) => (
             <li

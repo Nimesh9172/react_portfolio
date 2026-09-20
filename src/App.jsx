@@ -1,5 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
-
 import {
   About,
   Contact,
@@ -16,9 +14,9 @@ import {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <CustomCursor />
-      <div className="relative z-0 w-full overflow-x-clip bg-primary">
+      <div id="home" className="relative z-0 w-full overflow-x-clip bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -34,7 +32,7 @@ const App = () => {
           <StarsCanvas />
         </div>
       </div>
-    </BrowserRouter>
+    </>
   );
 };
 
