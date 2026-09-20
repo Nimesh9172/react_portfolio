@@ -31,7 +31,6 @@ import { styles } from "../style";
 import techVideo from "../assets/video.webm";
 
 const allTechs = [
-  { name: "Python", Icon: SiPython, color: "#3776AB" },
   { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
   { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
   { name: "CSS", Icon: SiCss, color: "#1572B6" },
@@ -58,6 +57,7 @@ const allTechs = [
   { name: "Linux", Icon: SiLinux, color: "#FCC624" },
   { name: "REST API", Icon: FaDatabase, color: "#a78bfa" },
   { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
+  { name: "Python", Icon: SiPython, color: "#3776AB" },
 ];
 
 const pyramidRows = [
