@@ -16,6 +16,7 @@ import {
   SiDocker,
   SiGit,
   SiGithub,
+  SiGithubactions,
   SiBitbucket,
   SiJenkins,
   SiRabbitmq,
@@ -53,6 +54,7 @@ const allTechs = [
   { name: "Jenkins", Icon: SiJenkins, color: "#D33833" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "GitHub", Icon: SiGithub, color: "#ffffff" },
+  { name: "GitHub Actions", Icon: SiGithubactions, color: "#2088FF" },
   { name: "Bitbucket", Icon: SiBitbucket, color: "#2684FF" },
   { name: "Linux", Icon: SiLinux, color: "#FCC624" },
   { name: "REST API", Icon: FaDatabase, color: "#a78bfa" },
@@ -62,10 +64,10 @@ const allTechs = [
 
 const pyramidRows = [
   allTechs.slice(0, 8),
-  allTechs.slice(8, 15),
-  allTechs.slice(15, 21),
-  allTechs.slice(21, 24),
-  allTechs.slice(24, 26),
+  allTechs.slice(8, 14),
+  allTechs.slice(14, 19),
+  allTechs.slice(19, 23),
+  allTechs.slice(23, 26),
   allTechs.slice(26),
 ];
 
@@ -150,7 +152,7 @@ const Tech = () => {
           ))}
         </div>
 
-        {/* Desktop: 8 → 7 → 6 → 3 → 2 → 1 pyramid */}
+        {/* Desktop: 8 → 6 → 5 → 4 → 3 → 2 pyramid */}
         <div className="hidden w-full flex-col items-center gap-3 lg:flex">
           {pyramidRows.map((row, rowIdx) => (
             <div

@@ -13,6 +13,7 @@ import skycrm from "./skycrm.svg";
 import spreadingknowledge from "./spreadingknowledge.svg";
 import edukaan from "./edukaan.svg";
 import technician from "./technician.svg";
+import sprair from "./sprair.svg";
 
 export {
   logo,
@@ -28,4 +29,5 @@ export {
   spreadingknowledge,
   edukaan,
   technician,
+  sprair,
 };

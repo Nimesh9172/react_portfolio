@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const stats = [
   { value: "04+", label: "Years shipping" },
   { value: "1M+", label: "Users reached" },
-  { value: "04", label: "Live products" },
+  { value: "05", label: "Live products" },
   { value: "02", label: "Clouds in prod" },
 ];
 

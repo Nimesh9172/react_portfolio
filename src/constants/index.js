@@ -9,6 +9,7 @@ import {
   spreadingknowledge,
   edukaan,
   technician,
+  sprair,
 } from "../assets";
 
 export const navLinks = [
@@ -255,6 +256,27 @@ const projects = [
       suffix: "K+",
       label: "active students",
       display: "6.5K+",
+    },
+  },
+  {
+    name: "SPR Air Systems",
+    badge: "Startup",
+    description:
+      "Frontend for a Vasai-based industrial startup — a conversion-focused site covering compressors, dryers, filters, and piping, with a 6-step enquiry flow and 24/7 quote capture.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+      { name: "frontend", color: "pink-text-gradient" },
+    ],
+    image: sprair,
+    live_link: "https://www.spr-airsystems.in/",
+    source_code_link: "",
+    impact: {
+      to: 24,
+      decimals: 0,
+      suffix: "/7",
+      label: "enquiry & support",
+      display: "24/7",
     },
   },
 ];

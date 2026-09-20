@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const highlights = [
   { value: "04+", label: "Years in production" },
-  { value: "04", label: "Live products" },
+  { value: "05", label: "Live products" },
   { value: "02", label: "Clouds in prod" },
 ];
 
