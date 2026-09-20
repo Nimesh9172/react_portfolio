@@ -10,7 +10,9 @@ const sentence1 = "Hi,".split("");
 const sentence2 = "I'm".split("");
 const sentence3 = "Nimesh,".split("");
 const sentence4 = "Software".split("");
-const sentence5 = "Developer".split("");
+const sentence5 = "Engineer".split("");
+
+const floatingChips = ["Python", "Django", "React", "AWS", "Azure"];
 
 const Hero = () => {
   let letterIndex = 0;
@@ -30,6 +32,19 @@ const Hero = () => {
         </div>
 
         <div className="pointer-events-auto">
+          <motion.div
+            variants={fadeIn("up", "spring", 0.15, 0.6)}
+            initial="hidden"
+            animate="show"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#915EFF]/35 bg-[#915EFF]/10 px-3 py-1.5 text-[12px] text-[#ddd6fe] sm:text-[13px]"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            Currently shipping at Vishleshan · Mumbai
+          </motion.div>
+
           <div className="flex flex-col">
             <span className="flex text-white">
               {sentence1.map((letter, index) => (
@@ -80,6 +95,21 @@ const Hero = () => {
             4+ years building scalable web apps with Python, Django, React,
             AWS & Azure.
           </motion.p>
+          <motion.div
+            variants={fadeIn("up", "spring", 0.95, 0.7)}
+            initial="hidden"
+            animate="show"
+            className="mt-5 hidden flex-wrap gap-2 sm:flex"
+          >
+            {floatingChips.map((chip) => (
+              <span
+                key={chip}
+                className="hero-chip rounded-full px-3 py-1 text-[11px] font-medium tracking-wide text-[#ddd6fe]"
+              >
+                {chip}
+              </span>
+            ))}
+          </motion.div>
           <motion.div
             variants={fadeIn("up", "spring", 1, 0.8)}
             initial="hidden"

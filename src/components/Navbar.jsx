@@ -56,7 +56,7 @@ const Navbar = () => {
           </motion.div>
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Nimesh&nbsp;
-            <span className="md:block hidden"> | Software Developer</span>
+            <span className="md:block hidden"> | Software Engineer</span>
           </p>
         </Link>
         <ul className="list-none hidden md:flex flex-row gap-6 lg:gap-8 items-center">

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const HOVER_SELECTOR =
-  "a, button, [role='button'], label, .tech-card, .card-hover-glow, .cursor-grab, .cursor-pointer";
+  "a, button, [role='button'], label, .tech-card, .about-card, .card-hover-glow, .award-stage, .project-panel, .cursor-grab, .cursor-pointer";
 const INVERT_SELECTOR = "h1, h2, h3, nav a, nav p, nav span, .cursor-invert";
 const TEXT_SELECTOR = "input, textarea, select, [contenteditable='true']";
 

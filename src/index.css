@@ -18,7 +18,7 @@ body,
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 canvas {
@@ -177,6 +177,91 @@ canvas {
   }
 }
 
+.about-card {
+  --accent: #915eff;
+  --mx: 50%;
+  --my: 28%;
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--accent) 58%, transparent),
+    rgba(255, 255, 255, 0.1) 38%,
+    rgba(145, 94, 255, 0.12)
+  );
+  box-shadow: 0 18px 50px rgba(8, 5, 24, 0.45);
+  transition: box-shadow 0.35s ease;
+}
+
+.about-card:hover {
+  box-shadow: 0 22px 58px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.about-card > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--mx) var(--my),
+    color-mix(in srgb, var(--accent) 26%, transparent),
+    transparent 58%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-card:hover > div::before {
+  opacity: 1;
+}
+
+.about-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 30% 20%,
+    color-mix(in srgb, var(--accent) 38%, transparent),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.about-chip {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #ddd6fe;
+  background: rgba(145, 94, 255, 0.12);
+  border: 1px solid rgba(196, 181, 253, 0.18);
+}
+
+.about-snapshot {
+  background: linear-gradient(
+    180deg,
+    rgba(145, 94, 255, 0.18),
+    rgba(12, 9, 31, 0.94)
+  );
+  border: 1px solid rgba(196, 181, 253, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 20px 50px rgba(8, 5, 24, 0.35);
+}
+
+.about-snapshot::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -48px;
+  top: -62px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(145, 94, 255, 0.5), transparent 70%);
+  pointer-events: none;
+}
+
 .card-hover-glow {
   transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
@@ -185,8 +270,13 @@ canvas {
   box-shadow: 0 12px 40px rgba(145, 94, 255, 0.28);
 }
 
-.career-orb {
-  box-shadow: 0 0 40px 12px rgba(196, 181, 253, 0.45);
+.project-panel {
+  transition: opacity 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.project-panel-active {
+  opacity: 1;
+  box-shadow: 0 18px 50px rgba(145, 94, 255, 0.22);
 }
 
 .timeline-glow-orb {
@@ -213,10 +303,83 @@ canvas {
   background: rgba(110, 70, 190, 0.28);
 }
 
-.green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #666169 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+.timeline-logo {
+  box-shadow:
+    0 0 0 3px #050816,
+    0 0 18px rgba(145, 94, 255, 0.45);
+}
+
+.hero-chip {
+  border: 1px solid rgba(196, 181, 253, 0.22);
+  background: rgba(12, 9, 31, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.contact-field {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.contact-field:focus {
+  border-color: rgba(145, 94, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(145, 94, 255, 0.16);
+}
+
+.award-stage {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(250, 204, 21, 0.16), transparent 42%),
+    radial-gradient(circle at 86% 80%, rgba(145, 94, 255, 0.28), transparent 46%),
+    linear-gradient(160deg, rgba(21, 16, 48, 0.96), rgba(8, 5, 24, 0.98));
+  border: 1px solid rgba(250, 204, 21, 0.18);
+  box-shadow: 0 24px 70px rgba(8, 5, 24, 0.45);
+}
+
+.award-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 62%
+  );
+  transform: translateX(-60%);
+  animation: award-sheen 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes award-sheen {
+  0%,
+  35% {
+    transform: translateX(-60%);
+  }
+  70%,
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+.award-medal {
+  background: radial-gradient(circle at 32% 28%, #fde68a, #f59e0b 46%, #b45309);
+  box-shadow:
+    0 0 30px rgba(245, 158, 11, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.award-stage-certificate {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(167, 139, 250, 0.22), transparent 42%),
+    radial-gradient(circle at 86% 80%, rgba(145, 94, 255, 0.24), transparent 46%),
+    linear-gradient(160deg, rgba(21, 16, 48, 0.96), rgba(8, 5, 24, 0.98));
+  border: 1px solid rgba(196, 181, 253, 0.28);
+}
+
+.award-medal-certificate {
+  background: radial-gradient(circle at 32% 28%, #ddd6fe, #a78bfa 46%, #6d28d9);
+  box-shadow:
+    0 0 30px rgba(167, 139, 250, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .orange-text-gradient {

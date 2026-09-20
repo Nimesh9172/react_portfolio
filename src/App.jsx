@@ -18,7 +18,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <CustomCursor />
-      <div className="relative z-0 w-full overflow-x-hidden bg-primary">
+      <div className="relative z-0 w-full overflow-x-clip bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />

@@ -103,7 +103,10 @@ const Contact = () => {
         className="w-full lg:w-1/2 bg-black-100 p-6 sm:p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h2 className={styles.sectionHeadText}>Contact.</h2>
+        <h2 className={`${styles.sectionHeadText} cursor-invert`}>Contact.</h2>
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-secondary">
+          A role, a collaboration, or a quick hello — I usually reply within a day.
+        </p>
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
           {contactItems.map(({ icon: Icon, label, value, href }) => (
@@ -148,8 +151,8 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your name?"
-              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              placeholder="Your name"
+              className="contact-field bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -160,8 +163,8 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your email?"
-              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              placeholder="you@company.com"
+              className="contact-field bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -172,8 +175,8 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What do you want to say?"
-              className="bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+              placeholder="A role, a project, or just a hello..."
+              className="contact-field bg-tertiary py-3 px-5 placeholder:text-secondary text-white rounded-lg outline-none font-medium resize-none"
             />
           </label>
           <motion.button

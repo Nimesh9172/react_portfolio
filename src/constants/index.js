@@ -3,18 +3,6 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  html,
-  css,
-  reactjs,
-  tailwind,
-  mongodb,
-  mysql,
-  django,
-  python,
-  nextjs,
-  git,
-  docker,
   intellect,
   vishleshan,
   skycrm,
@@ -52,7 +40,7 @@ export const navLinks = [
 
 export const socialLinks = {
   name: "Nimesh Vishwakarma",
-  role: "Software Developer",
+  role: "Software Engineer",
   email: "nimeshvishwav@gmail.com",
   phone: "+91 79728 61253",
   phoneHref: "tel:+917972861253",
@@ -64,90 +52,47 @@ export const socialLinks = {
 
 const services = [
   {
-    title: "Backend Developer",
+    title: "Backend Development",
     icon: backend,
+    featured: true,
+    accent: "#915EFF",
+    description:
+      "Designing scalable APIs, database systems, and background workers with Django, PostgreSQL, Redis and Celery.",
+    tags: ["Django", "PostgreSQL", "Redis", "Celery", "Solr"],
+    points: [
+      "API architecture & service design",
+      "Database design & query optimization",
+      "Async processing with Celery & RabbitMQ",
+      "Caching with Redis",
+      "Search & indexing with Solr",
+      "Authentication & authorization",
+      "Read/write database optimization",
+      "Production deployment & monitoring",
+    ],
   },
   {
-    title: "Full-Stack Developer",
+    title: "Full-Stack Development",
     icon: web,
+    accent: "#38bdf8",
+    description:
+      "Building complete web applications from responsive React and Next.js interfaces to Django-powered APIs and databases.",
+    tags: ["React", "Next.js", "Django", "REST"],
   },
   {
     title: "Cloud & DevOps",
     icon: creator,
+    accent: "#34d399",
+    description:
+      "Deploying and maintaining production applications with Docker, AWS, Azure and CI/CD workflows.",
+    tags: ["Docker", "AWS", "Azure", "CI/CD"],
   },
   {
-    title: "Mobile Developer",
+    title: "Mobile Development",
     icon: mobile,
-  },
-];
-
-const technologies = [
-  {
-    name: "Python",
-    icon: python,
-  },
-  {
-    name: "Django",
-    icon: django,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Next JS",
-    icon: nextjs,
-  },
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "MySQL",
-    icon: mysql,
-  },
-  {
-    name: "Docker",
-    icon: docker,
-  },
-  {
-    name: "Git",
-    icon: git,
-  },
-];
-
-const skillCategories = [
-  {
-    title: "Languages",
-    skills: ["Python", "JavaScript", "SQL"],
-  },
-  {
-    title: "Frameworks",
-    skills: ["Django", "Django REST Framework", "React.js", "React Native", "Next.js", "Flask"],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: ["AWS", "Azure", "Docker", "Jenkins", "CI/CD"],
-  },
-  {
-    title: "Databases",
-    skills: ["MongoDB", "MySQL", "PostgreSQL"],
+    accent: "#f472b6",
+    description:
+      "Building React Native applications connected to production APIs for real-world field and technician workflows.",
+    tags: ["React Native", "REST API"],
   },
 ];
 
@@ -160,7 +105,7 @@ const experiences = [
     summary:
       "Leading backend delivery for enterprise platforms, mentoring peers, and driving Git branching, production deployments, and development best practices across AWS and Azure.",
     icon: vishleshan,
-    iconBg: "#383E56",
+    iconBg: "#ffffff",
     points: [
       "Introduced Git branching strategies, mentored peers, and drove production-ready development practices.",
       "Played a key role in requirement analysis, production deployments, and maintaining robust, performant code.",
@@ -175,7 +120,7 @@ const experiences = [
     summary:
       "Built backends and database schemas from scratch for field-service and B2B eCommerce platforms using Python, Django, and Docker. Improved performance with Celery, RabbitMQ, materialized views, and database replication.",
     icon: vishleshan,
-    iconBg: "#383E56",
+    iconBg: "#ffffff",
     points: [
       "Designed and implemented the backend and database schema from scratch for the Technician App, enabling real-time field operations and job tracking.",
       "Developed scalable backend services using Python, Django, and Docker, with a strong emphasis on REST APIs and third-party integrations.",
@@ -204,9 +149,22 @@ const experiences = [
 
 const awards = [
   {
+    title: "Certificate of Appreciation",
+    company: "Vishleshan AI Solutions",
+    year: "2026",
+    date: "Jun 2026",
+    kind: "Certificate",
+    variant: "certificate",
+    description:
+      "Received a Certificate of Appreciation for consistent contribution, ownership, and support across key product deliveries.",
+  },
+  {
     title: "Ultimate Team Player Award",
     company: "Vishleshan AI Solutions",
     year: "2024",
+    date: "2024",
+    kind: "Team honour",
+    variant: "gold",
     description:
       "Recognized for exceptional collaboration, ownership, and contribution to team success across key projects.",
   },
@@ -215,6 +173,7 @@ const awards = [
 const projects = [
   {
     name: "Edukaan (Tata Motors)",
+    badge: "Tata Motors",
     description:
       "Scalable B2B eCommerce platform that helps dealers manage orders, inventory, and product catalogs. Performance was improved with materialized views, Celery + RabbitMQ, and database replication.",
     tags: [
@@ -224,11 +183,12 @@ const projects = [
       { name: "aws", color: "pink-text-gradient" },
     ],
     image: edukaan,
-    live_link: "",
+    live_link: "https://edukaan.cv.tatamotors/",
     source_code_link: "",
   },
   {
     name: "Technician App (Havells)",
+    badge: "Havells",
     description:
       "Technician-facing app that optimizes service job assignments, workflow tracking, and real-time field updates. Backend and database schema were designed from scratch for live operations.",
     tags: [
@@ -238,11 +198,12 @@ const projects = [
       { name: "react-native", color: "orange-text-gradient" },
     ],
     image: technician,
-    live_link: "",
+    live_link: "https://play.google.com/store/apps/details?id=com.havells.techapp&hl=en_IN",
     source_code_link: "",
   },
   {
     name: "SkyCRM",
+    badge: "Omnichannel CRM",
     description:
       "Centralized CRM integrating IVR, ACD, omnichannel support (email, chat, social), analytics, and workforce management — including live call monitoring and in-depth reporting.",
     tags: [
@@ -256,6 +217,7 @@ const projects = [
   },
   {
     name: "Spreading Knowledge",
+    badge: "E-learning",
     description:
       "Full-stack e-learning platform similar to UpGrad, with course browsing, user progress tracking, secure authentication, and payment integration using Django, React.js, and REST APIs.",
     tags: [
@@ -271,8 +233,6 @@ const projects = [
 
 export {
   services,
-  technologies,
-  skillCategories,
   experiences,
   awards,
   projects,

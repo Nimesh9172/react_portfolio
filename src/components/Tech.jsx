@@ -16,14 +16,12 @@ import {
   SiDocker,
   SiGit,
   SiGithub,
+  SiBitbucket,
   SiJenkins,
   SiRabbitmq,
   SiCelery,
   SiLinux,
   SiPostman,
-  SiFirebase,
-  SiVercel,
-  SiNodedotjs,
 } from "react-icons/si";
 import { FaAws, FaDatabase } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
@@ -48,17 +46,15 @@ const allTechs = [
   { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
   { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-  { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
   { name: "AWS", Icon: FaAws, color: "#FF9900" },
   { name: "Azure", Icon: VscAzure, color: "#0078D4" },
-  { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
   { name: "Redis", Icon: DiRedis, color: "#DC382D" },
   { name: "RabbitMQ", Icon: SiRabbitmq, color: "#FF6600" },
   { name: "Celery", Icon: SiCelery, color: "#37814A" },
   { name: "Jenkins", Icon: SiJenkins, color: "#D33833" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "GitHub", Icon: SiGithub, color: "#ffffff" },
-  { name: "Vercel", Icon: SiVercel, color: "#ffffff" },
+  { name: "Bitbucket", Icon: SiBitbucket, color: "#2684FF" },
   { name: "Linux", Icon: SiLinux, color: "#FCC624" },
   { name: "REST API", Icon: FaDatabase, color: "#a78bfa" },
   { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
@@ -67,10 +63,10 @@ const allTechs = [
 const pyramidRows = [
   allTechs.slice(0, 8),
   allTechs.slice(8, 15),
-  allTechs.slice(15, 20),
-  allTechs.slice(20, 24),
-  allTechs.slice(24, 27),
-  allTechs.slice(27, 29),
+  allTechs.slice(15, 21),
+  allTechs.slice(21, 24),
+  allTechs.slice(24, 26),
+  allTechs.slice(26),
 ];
 
 const TechCard = ({ name, Icon, color, delay, className = "" }) => {
@@ -154,7 +150,7 @@ const Tech = () => {
           ))}
         </div>
 
-        {/* Desktop: 8 → 7 → 5 → 4 → 3 → 2 pyramid */}
+        {/* Desktop: 8 → 7 → 6 → 3 → 2 → 1 pyramid */}
         <div className="hidden w-full flex-col items-center gap-3 lg:flex">
           {pyramidRows.map((row, rowIdx) => (
             <div
