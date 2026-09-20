@@ -1,9 +1,43 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
+import { animate, motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaArrowRight, FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
 
 import { styles } from "../style";
 import { projects } from "../constants";
+
+const formatImpact = (value, decimals = 0) =>
+  decimals > 0 ? value.toFixed(decimals) : String(Math.round(value));
+
+const ImpactStat = ({ to, decimals = 0, suffix, label, active }) => {
+  const [display, setDisplay] = useState(() => formatImpact(to, decimals));
+
+  useEffect(() => {
+    if (!active) {
+      setDisplay(formatImpact(to, decimals));
+      return undefined;
+    }
+
+    const controls = animate(0, to, {
+      duration: 1.15,
+      ease: "easeOut",
+      onUpdate: (latest) => setDisplay(formatImpact(latest, decimals)),
+    });
+
+    return () => controls.stop();
+  }, [active, to, decimals]);
+
+  return (
+    <div className="project-impact absolute bottom-4 right-4 rounded-2xl px-3 py-2 text-right sm:px-4 sm:py-3">
+      <p className="text-[22px] font-black leading-none text-white sm:text-[30px]">
+        {display}
+        {suffix}
+      </p>
+      <p className="mt-1 max-w-[9.5rem] text-[10px] uppercase tracking-[0.16em] text-[#c4b5fd] sm:text-[11px]">
+        {label}
+      </p>
+    </div>
+  );
+};
 
 const ProjectCard = ({
   index,
@@ -14,6 +48,7 @@ const ProjectCard = ({
   image,
   live_link,
   source_code_link,
+  impact,
   active,
 }) => {
   const openLink = (url) => {
@@ -41,6 +76,7 @@ const ProjectCard = ({
             {badge}
           </span>
         ) : null}
+        {impact ? <ImpactStat active={active} {...impact} /> : null}
         <div className="absolute right-4 top-4 flex gap-2">
           {source_code_link ? (
             <button
@@ -161,13 +197,25 @@ const Works = () => {
             <p className={styles.sectionSubText}>My work</p>
             <h2 className={`${styles.sectionHeadText} cursor-invert`}>Projects.</h2>
           </div>
-          <div className="hidden items-center gap-3 pb-3 text-secondary sm:flex">
-            <span className="text-white text-3xl font-black">
-              {String(active + 1).padStart(2, "0")}
-            </span>
-            <span className="text-white/30">/</span>
-            <span>{String(projects.length).padStart(2, "0")}</span>
-            <FaArrowRight className="ml-2 text-[#915EFF]" />
+          <div className="hidden items-end gap-6 pb-3 sm:flex">
+            {projects[active]?.impact ? (
+              <div className="text-right">
+                <p className="text-white text-2xl font-black leading-none lg:text-3xl">
+                  {projects[active].impact.display}
+                </p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-[#c4b5fd]">
+                  {projects[active].impact.label}
+                </p>
+              </div>
+            ) : null}
+            <div className="flex items-center gap-3 text-secondary">
+              <span className="text-white text-3xl font-black">
+                {String(active + 1).padStart(2, "0")}
+              </span>
+              <span className="text-white/30">/</span>
+              <span>{String(projects.length).padStart(2, "0")}</span>
+              <FaArrowRight className="ml-2 text-[#915EFF]" />
+            </div>
           </div>
         </div>
 

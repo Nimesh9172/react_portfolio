@@ -8,6 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const stats = [
   { value: "04+", label: "Years shipping" },
+  { value: "1M+", label: "Users reached" },
   { value: "04", label: "Live products" },
   { value: "02", label: "Clouds in prod" },
 ];
@@ -148,7 +149,7 @@ const About = () => {
           <p className="mt-1 text-[#c4b5fd]">Vishleshan AI Solutions</p>
           <p className="mt-1 text-sm text-secondary">Mumbai, India</p>
 
-          <div className="mt-7 grid grid-cols-3 gap-3 border-t border-white/10 pt-5">
+          <div className="mt-7 grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <p className="text-[26px] font-black leading-none text-white">

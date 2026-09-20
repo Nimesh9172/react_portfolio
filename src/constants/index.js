@@ -185,6 +185,13 @@ const projects = [
     image: edukaan,
     live_link: "https://edukaan.cv.tatamotors/",
     source_code_link: "",
+    impact: {
+      to: 1,
+      decimals: 0,
+      suffix: "M+",
+      label: "active users",
+      display: "1M+",
+    },
   },
   {
     name: "Technician App (Havells)",
@@ -200,6 +207,13 @@ const projects = [
     image: technician,
     live_link: "https://play.google.com/store/apps/details?id=com.havells.techapp&hl=en_IN",
     source_code_link: "",
+    impact: {
+      to: 20,
+      decimals: 0,
+      suffix: "K+",
+      label: "engineers on mobile",
+      display: "20K+",
+    },
   },
   {
     name: "SkyCRM",
@@ -214,6 +228,13 @@ const projects = [
     image: skycrm,
     live_link: "https://creditfair.skycrm.app/",
     source_code_link: "",
+    impact: {
+      to: 5,
+      decimals: 0,
+      suffix: "K+",
+      label: "active callers",
+      display: "5K+",
+    },
   },
   {
     name: "Spreading Knowledge",
@@ -228,6 +249,13 @@ const projects = [
     image: spreadingknowledge,
     live_link: "http://spreadingknowledge.in/",
     source_code_link: "",
+    impact: {
+      to: 6.5,
+      decimals: 1,
+      suffix: "K+",
+      label: "active students",
+      display: "6.5K+",
+    },
   },
 ];
 
