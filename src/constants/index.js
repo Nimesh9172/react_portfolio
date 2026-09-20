@@ -156,7 +156,7 @@ const awards = [
     kind: "Certificate",
     variant: "certificate",
     description:
-      "Received a Certificate of Appreciation for consistent contribution, ownership, and support across key product deliveries.",
+      "Recognized for consistent contribution, ownership, and support across key product deliveries.",
   },
   {
     title: "Ultimate Team Player Award",
