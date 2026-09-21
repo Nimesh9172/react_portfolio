@@ -19,9 +19,9 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden">
-      <div className="absolute inset-0 z-0 hidden h-full w-full overflow-hidden md:block cursor-grab active:cursor-grabbing">
+      {/* <div className="absolute inset-0 z-0 hidden h-full w-full overflow-hidden md:block cursor-grab active:cursor-grabbing">
         <ComputersCanvas />
-      </div>
+      </div> */}
 
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-10 pointer-events-none`}
